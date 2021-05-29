@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import { FormattedMessage } from "react-intl";
+import { LOCALES } from "../../i18n/locales";
 
 export const Navbar = ({ setLanguage }) => {
+  const [lang, setLang] = useState("English");
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -29,7 +32,54 @@ export const Navbar = ({ setLanguage }) => {
               </Link>
             </div>
             <div className="navbar-nav-controls">
-             {/** here lang selector */  }
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownMenuLink"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {lang === "Spanish" ? (
+                    <img src="/spain.png" className="countries" />
+                  ) : (
+                    <img src="/united-states.png" className="countries" />
+                  )}
+                </a>
+                <ul
+                  class="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  {lang !== "Spanish" ? (
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          setLanguage(LOCALES.SPANISH);
+                          setLang("Spanish");
+                        }}
+                      >
+                        <img src="/spain.png" className="countries" />
+                      </a>
+                    </li>
+                  ) : (
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          setLanguage(LOCALES.ENGLISH);
+                          setLang("English");
+                        }}
+                      >
+                        <img src="/united-states.png" className="countries" />
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              </li>
             </div>
           </div>
         </div>

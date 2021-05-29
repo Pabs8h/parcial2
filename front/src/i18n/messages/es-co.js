@@ -14,5 +14,8 @@ export default {
       "Tu tienes {money, plural, =0 { nada} one {# un millón} other {# millones}}",
     myRooms: "Mis habitaciones",
     stats: "Estadísticas",
+    device: "Dispositivos",
+    value: "Valor",
+    usage: "Uso de Energía (kwH) - Hoy"
   },
 };

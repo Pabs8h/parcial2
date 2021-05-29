@@ -13,5 +13,8 @@ export default {
     example: "You have {money} million",
     myRooms: "My rooms",
     stats: "Stats",
+    device:"Devices",
+    value:"Value",
+    usage:"Power Usage (kwH) - Today",
   },
 };
